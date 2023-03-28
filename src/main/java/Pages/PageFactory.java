@@ -1,2 +1,4 @@
-package Pages;public class PageFactory {
+package Pages;
+
+public class PageFactory {
 }

@@ -20,35 +20,52 @@
                 <artifactId>java-client</artifactId>
                 <version>7.0.0</version>
             </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
         </dependency>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.1.0</version>
-            <scope>compile</scope>
+            <groupId>es.urjc.etsii.grafo</groupId>
+            <artifactId>__RNAME__</artifactId>
+            <version>0.16</version>
         </dependency>
+        <dependency>
+            <groupId>es.urjc.etsii.grafo</groupId>
+            <artifactId>__RNAME__</artifactId>
+            <version>0.16</version>
+        </dependency>
+        <!--        <dependency>-->
+<!--            <groupId>org.testng</groupId>-->
+<!--            <artifactId>testng</artifactId>-->
+<!--            <version>7.1.0</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
 
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
