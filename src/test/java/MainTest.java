@@ -1,20 +1,27 @@
+import Pages.MainPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.FindBy;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import static org.junit.Assert.assertTrue;
 
 
 public class MainTest {
-    AndroidDriver ad;
-    public MainTest() throws MalformedURLException {
+
+    MainPage mainPage;
+    static AndroidDriver ad;
+
+    @Before
+    public void setUp() throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
 
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
@@ -23,21 +30,34 @@ public class MainTest {
         cap.setCapability("appActivity", "weather.widget.radar.storm.live.local.temperature.forecast.main.MainActivity");
         cap.setCapability("noReset", true);
 
-        AndroidDriver ad = new AndroidDriver(new URL("https://0.0.0.0:4723/wd/hub"), cap);
+        ad = new AndroidDriver(new URL("https://0.0.0.0:4723/wd/hub"), cap);
 
-        }
-
-    private final String mainPageTitle = "weather.widget.radar.storm.live.local.temperature.forecast:id/title";
-    @FindBy(id = mainPageTitle)
-    private WebElement mainPageTitleHeader;
-    public WebElement getMainPageTitleHeader(){
-        return mainPageTitleHeader;
     }
 
 
-        @Test
-        public void firsTest(){
-            assertTrue(getMainPageTitleHeader().isDisplayed());
-        }
+
+    @Test
+    public void firsTest() {
+        assertTrue(mainPage.getMainPageTitleHeader().isDisplayed());
+    }
+    @Test
+    public void firsTest() {
+        mainPage.getMainPremButtonHeader().click();
+
+
+    }
+    @Test
+    public void firsTest() {
+        assertTrue(mainPage.getMainPageTitleHeader().isDisplayed());
+    }
+    @Test
+    public void firsTest() {
+        assertTrue(mainPage.getMainPageTitleHeader().isDisplayed());
+    }
+    @Test
+    public void firsTest() {
+        assertTrue(mainPage.getMainPageTitleHeader().isDisplayed());
+    }
+
 
 }
