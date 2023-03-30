@@ -1,21 +1,37 @@
 package Pages;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
+
+    AndroidDriver ad;
+
 
     /**
      * Get MobileElement
      *
      * @return {@link <MobileElement>}
      */
-    private final String mainPageTitle = "weather.widget.radar.storm.live.local.temperature.forecast:id/title";
-    @FindBy(id = mainPageTitle)
-    private MobileElement mainPageTitleHeader;
-    public MobileElement getMainPageTitleHeader() {
-        return mainPageTitleHeader;
+//    private final String mainPageTitle = "weather.widget.radar.storm.live.local.temperature.forecast:id/title";
+//    @FindBy(id = mainPageTitle)
+//    private MobileElement mainPageTitleHeader;
+//    public MobileElement getMainPageTitleHeader() {
+//        return mainPageTitleHeader;
+//    }
+    public MainPage(AndroidDriver ad) {
+        this.ad = ad;
+        PageFactory.initElements(this.ad, this);
     }
+    @FindBy(id = Constants.idPattern + "title")
+    private WebElement mainPageTitleHeader;
+    public String getText(){
+        return mainPageTitleHeader.getText();
+    }
+
 
     private final String mainPageBackButton = "weather.widget.radar.storm.live.local.temperature.forecast:id/imgBackArrow";
     @FindBy(id = mainPageBackButton)
